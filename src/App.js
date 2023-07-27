@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
 
 function App() {
+  const [jobList, setJobList] = useState([]);
+
+  const [jobData, setJobData] = useState({
+    jobTitle: '',
+    company: '',
+  });
+
+  const handleAddJob = (evt) => {
+    evt.preventDefault();
+    setJobList([{ ...jobData }]);
+
+    setJobData({
+      jobTitle: '',
+      company: '',
+    });
+  };
+  console.log(jobList);
+
+  const handleChange = (evt) => {
+    setJobData({
+      ...jobData,
+      [evt.target.name]: evt.target.value,
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Main
+        jobData={jobData}
+        handleAddJob={handleAddJob}
+        handleChange={handleChange}
+      />
     </div>
   );
 }
