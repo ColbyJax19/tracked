@@ -12,11 +12,71 @@
       Header
 ======================== */
 
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+  height: 10vh;
+
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
 .header a {
   display: inline-flex;
   text-decoration: none;
   color: black;
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 7px;
   margin: 0px 12px;
+  transition: 0.5s;
+}
+
+.header a:hover {
+  background-color: #bec3cf;
+}
+
+/* =========================
+        Profile
+========================= */
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  flex-direction: column;
+}
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30vw;
+  margin: 30px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.resume button {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px;
 }
 
 
