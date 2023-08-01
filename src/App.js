@@ -5,30 +5,34 @@ import Main from './components/Main';
 import Profile from './components/Profile';
 
 function App() {
-  const [jobList, setJobList] = useState([]);
-
+  //Jobs Form
   const [jobData, setJobData] = useState({
     jobTitle: '',
     company: '',
   });
-
-  const handleAddJob = (evt) => {
-    evt.preventDefault();
-    setJobList([{ ...jobData }]);
-
-    setJobData({
-      jobTitle: '',
-      company: '',
-    });
-  };
-  console.log(jobList);
-
+  
   const handleChange = (evt) => {
     setJobData({
       ...jobData,
       [evt.target.name]: evt.target.value,
     });
   };
+
+  //Jobs List
+  const [jobList, setJobList] = useState([]);
+
+  const handleAddJob = (evt) => {
+    evt.preventDefault();
+
+    setJobList([...jobList, jobData]);
+    
+    setJobData({
+      jobTitle: '',
+      company: '',
+    });
+  };
+  
+  
 
   return (
     <div className="App">
@@ -37,6 +41,7 @@ function App() {
         jobData={jobData}
         handleAddJob={handleAddJob}
         handleChange={handleChange}
+        jobList={jobList}
       />
     </div>
   );

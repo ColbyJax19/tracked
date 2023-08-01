@@ -4,9 +4,10 @@ import Profile from './Profile';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 
-export default function Main({ jobData, handleAddJob, handleChange }) {
+export default function Main({ jobData, handleAddJob, handleChange, jobList }) {
   return (
     <div className="main">
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -21,6 +22,14 @@ export default function Main({ jobData, handleAddJob, handleChange }) {
         />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+
+      <Jobs
+        jobData={jobData}
+        handleAddJob={handleAddJob}
+        handleChange={handleChange}
+        jobList={jobList}
+      />
+
     </div>
   );
 }
