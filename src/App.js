@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
-import Profile from './components/Profile';
 
 function App() {
   //Jobs Form
@@ -10,7 +9,7 @@ function App() {
     jobTitle: '',
     company: '',
   });
-  
+
   const handleChange = (evt) => {
     setJobData({
       ...jobData,
@@ -25,14 +24,12 @@ function App() {
     evt.preventDefault();
 
     setJobList([...jobList, jobData]);
-    
+
     setJobData({
       jobTitle: '',
       company: '',
     });
   };
-  
-  
 
   return (
     <div className="App">

@@ -79,18 +79,43 @@
   margin: 5px;
 }
 
-
 /* ===================
       JobList
 ======================== */
 
-.jobList{
+.jobList {
   border: 1px solid violet;
 }
-table{
+table {
   border-collapse: collapse;
 }
-td, th{
+td,
+th {
   border: 1px solid black;
   padding: 8px;
+}
+
+/* ===================
+      Home
+===================== */
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1.5vmin);
+}
+
+.jobs li {
+  display: flex;
+  align-items: center;
+  border: solid 2px #d0d0d0;
+  border-radius: 0.2em;
+  padding: 0.5em 0.8em 0.5em 0.5em;
+  margin-bottom: 1em;
+}
+.jobs p {
+  max-width: none;
+  font-weight: bold;
+  margin: 0;
 }

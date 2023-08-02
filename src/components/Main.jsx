@@ -7,7 +7,6 @@ import Home from './Home';
 export default function Main({ jobData, handleAddJob, handleChange, jobList }) {
   return (
     <div className="main">
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -29,7 +28,6 @@ export default function Main({ jobData, handleAddJob, handleChange, jobList }) {
         handleChange={handleChange}
         jobList={jobList}
       />
-
     </div>
   );
 }
